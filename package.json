@@ -20,7 +20,8 @@
    "scripts": {
       "build": "webpack --mode production",
       "eslint": "eslint src --ext .js,.jsx",
-      "eslint:fix": "npm run eslint -- --fix"
+      "eslint:fix": "npm run eslint -- --fix",
+      "prepare": "npm run build"
    },
    "peerDependencies": {
       "react": "^18.2.0",
