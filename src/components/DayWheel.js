@@ -15,7 +15,7 @@ function DayWheel({ height, day, setDay }) {
       parseInt(
          initialNumbersValue(height, hourLength, parseInt(day.slice(0, 2))).filter(
             (item) => item.number === day.slice(0, 2) && item.selected === true,
-         )[0].translatedValue,
+         )[0]?.translatedValue,
       ),
    );
    const [startCapture, setStartCapture] = useState(false);
@@ -216,7 +216,7 @@ function DayWheel({ height, day, setDay }) {
                      className={`react-ios-time-picker-cell-inner-hour${hourObj.selected ? ' react-ios-time-picker-cell-inner-selected' : ''
                         }${hourObj?.hidden ? ' react-ios-time-picker-cell-inner-hidden' : ''}`}
                      onClick={handleClickToSelect}
-                     data-translated-value={hourObj.translatedValue}
+                     data-translated-value={hourObj?.translatedValue}
                   >
                      {hourObj.number}
                   </div>

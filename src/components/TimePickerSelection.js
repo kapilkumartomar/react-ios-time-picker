@@ -27,7 +27,7 @@ function TimePickerSelection({
       initialValue === null ? pickerDefaultValue : initialTimeValue,
    );
 
-   const [day, setDay] = useState('')
+   const [day, setDay] = useState('0')
 
    const [hourFormat, setHourFormat] = useState({
       mount: false,
