@@ -3,7 +3,7 @@ import { initialNumbersValue, returnSelectedValue } from '../helpers';
 import PickerEffects from './PickerEffects';
 
 function DayWheel({ height, day, setDay }) {
-   const hourLength = 60
+   const hourLength = 30
    console.log('intitial hours', initialNumbersValue(height, hourLength, parseInt(day.slice(0, 2))),)
    const [hours, setHours] = useState(
       initialNumbersValue(height, hourLength, parseInt(day.slice(0, 2))),
