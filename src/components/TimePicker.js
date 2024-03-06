@@ -29,18 +29,18 @@ function TimePicker({
    popupClassName = null,
    inputClassName = null,
 }) {
-   const [isOpen, setIsOpen] = useState(initialIsOpenValue);
+   // const [isOpen, setIsOpen] = useState(initialIsOpenValue);
    const [height, setHeight] = useState(cellHeight);
    const [inputValue, setInputValue] = useState(initialValue);
 
-   const handleClick = () => {
-      setIsOpen(!isOpen);
-   };
+   // const handleClick = () => {
+   //    setIsOpen(!isOpen);
+   // };
 
-   const handleFocus = () => {
-      onFocus();
-      onOpen();
-   };
+   // const handleFocus = () => {
+   //    onFocus();
+   //    onOpen();
+   // };
 
    let finalValue = inputValue;
 
@@ -71,7 +71,7 @@ function TimePicker({
 
    return (
       <>
-         <div className="react-ios-time-picker-main" onClick={handleClick}>
+         {/* <div className="react-ios-time-picker-main" onClick={handleClick}>
             <input
                id={id}
                name={name}
@@ -84,13 +84,13 @@ function TimePicker({
                required={required}
                onFocus={handleFocus}
             />
-         </div>
-         {isOpen && !disabled && (
+         </div> */}
+         {initialIsOpenValue && !disabled && (
             <Portal>
                <div className="react-ios-time-picker-popup">
                   <div
                      className={`react-ios-time-picker-popup-overlay ${popupClassName || ''}`}
-                     onClick={() => setIsOpen(!isOpen)}
+                     onClick={() => onCancel?.()}
                   />
                   <TimePickerSelection {...params} />
                </div>

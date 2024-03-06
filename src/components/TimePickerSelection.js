@@ -98,7 +98,7 @@ function TimePickerSelection({
                <div className=' font_sm'>
                   Day
                </div>
-               <div className=' font_sm'>
+               <div className=' font_sm' style={{ transform: `translate(-26px, 0px)` }}>
                   Time
                </div>
             </div>
