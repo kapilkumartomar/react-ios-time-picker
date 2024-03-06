@@ -14,6 +14,7 @@ function TimePicker({
    onFocus = () => { },
    onSave = () => { },
    onCancel = () => { },
+   setIsOpen = ()=> { },
    disabled = false,
    isOpen: initialIsOpenValue = false,
    required = false,
@@ -90,7 +91,7 @@ function TimePicker({
                <div className="react-ios-time-picker-popup">
                   <div
                      className={`react-ios-time-picker-popup-overlay ${popupClassName || ''}`}
-                     onClick={() => onCancel?.()}
+                     onClick={() => setIsOpen?.(false)}
                   />
                   <TimePickerSelection {...params} />
                </div>
