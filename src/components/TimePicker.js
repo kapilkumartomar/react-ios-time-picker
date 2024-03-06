@@ -5,13 +5,15 @@ import '../styles/react-ios-time-picker.css';
 
 function TimePicker({
    value: initialValue = null,
+   initialDay = null,
    cellHeight = 28,
    placeHolder = 'Select Time',
    pickerDefaultValue = '10:00',
-   onChange = () => {},
-   onFocus = () => {},
-   onSave = () => {},
-   onCancel = () => {},
+   pickerDefaultDay = '00',
+   onChange = () => { },
+   onFocus = () => { },
+   onSave = () => { },
+   onCancel = () => { },
    disabled = false,
    isOpen: initialIsOpenValue = false,
    required = false,
@@ -21,9 +23,9 @@ function TimePicker({
    seperator = true,
    id = null,
    use12Hours = false,
-   onAmPmChange = () => {},
+   onAmPmChange = () => { },
    name = null,
-   onOpen = () => {},
+   onOpen = () => { },
    popupClassName = null,
    inputClassName = null,
 }) {
@@ -62,7 +64,9 @@ function TimePicker({
       use12Hours,
       onAmPmChange,
       initialValue: finalValue,
+      initialDay,
       pickerDefaultValue,
+      pickerDefaultDay
    };
 
    return (

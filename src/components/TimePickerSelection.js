@@ -7,7 +7,9 @@ import DayWheel from './DayWheel';
 
 function TimePickerSelection({
    pickerDefaultValue,
+   pickerDefaultDay,
    initialValue,
+   initialDay,
    onChange,
    height,
    onSave,
@@ -27,7 +29,7 @@ function TimePickerSelection({
       initialValue === null ? pickerDefaultValue : initialTimeValue,
    );
 
-   const [day, setDay] = useState('00')
+   const [day, setDay] = useState(initialDay === null ? pickerDefaultDay : initialDay)
 
    const [hourFormat, setHourFormat] = useState({
       mount: false,
