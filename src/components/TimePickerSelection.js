@@ -92,6 +92,8 @@ function TimePickerSelection({
                }}
             />
             <HourWheel {...params} />
+
+            <HourWheel {...params} />
             {seperator && <div className="react-ios-time-picker-colon">:</div>}
             <MinuteWheel {...params} />
             {use12Hours && <HourFormat {...params} />}
