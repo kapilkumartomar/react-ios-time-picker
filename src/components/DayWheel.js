@@ -4,6 +4,7 @@ import PickerEffects from './PickerEffects';
 
 function DayWheel({ height, day, setDay }) {
    const hourLength = 60
+   console.log('intitial hours', initialNumbersValue(height, hourLength, parseInt(day.slice(0, 2))),)
    const [hours, setHours] = useState(
       initialNumbersValue(height, hourLength, parseInt(day.slice(0, 2))),
    );
@@ -142,6 +143,7 @@ function DayWheel({ height, day, setDay }) {
          if (parseInt(item.translatedValue) === currentTranslatedValue) {
             setSelectedNumber(item.arrayNumber);
             setDay(() => item.number);
+            console.log("transtinEnd", item)
             setHours(() => {
                const newValue = initialNumbersValue(height, hourLength).map((hour) => {
                   if (
