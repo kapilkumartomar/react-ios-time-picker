@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import HourFormat from './HourFormat';
-import DayWheel from './DayWheel';
+import HourWheel from './HourWheel';
 import MinuteWheel from './MinuteWheel';
+import DayWheel from './DayWheel';
+
 
 function TimePickerSelection({
    pickerDefaultValue,
