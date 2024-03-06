@@ -92,6 +92,14 @@ function TimePickerSelection({
             className="react-ios-time-picker-container"
             style={{ height: `${height * 5 + 40}px` }}
          >
+            <div className='flex justify__around time_picker_header_custom'>
+               <div className=' font_sm'>
+                  Day
+               </div>
+               <div className=' font_sm'>
+                  Time
+               </div>
+            </div>
             <div
                className="react-ios-time-picker-selected-overlay"
                style={{
