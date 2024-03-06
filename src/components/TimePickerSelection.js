@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import HourFormat from './HourFormat';
-import HourWheel from './HourWheel';
+import DayWheel from './DayWheel';
 import MinuteWheel from './MinuteWheel';
 
 function TimePickerSelection({
@@ -19,10 +19,14 @@ function TimePickerSelection({
    use12Hours,
    onAmPmChange,
 }) {
+
    const initialTimeValue = use12Hours ? initialValue.slice(0, 5) : initialValue;
    const [value, setValue] = useState(
       initialValue === null ? pickerDefaultValue : initialTimeValue,
    );
+
+   const [day, setDay] = useState()
+
    const [hourFormat, setHourFormat] = useState({
       mount: false,
       hourFormat: initialValue.slice(6, 8),
@@ -51,13 +55,15 @@ function TimePickerSelection({
       onAmPmChange,
       setHourFormat,
       hourFormat,
+      day,
+      setDay
    };
 
    const handleSave = () => {
       const finalSelectedValue = use12Hours ? `${value} ${hourFormat.hourFormat}` : value;
       setInputValue(finalSelectedValue);
       onChange(finalSelectedValue);
-      onSave(finalSelectedValue);
+      onSave(finalSelectedValue, day);
       setIsOpen(false);
    };
    const handleCancel = () => {
@@ -91,7 +97,7 @@ function TimePickerSelection({
                   height: `${height}px`,
                }}
             />
-            <HourWheel {...params} />
+            <DayWheel {...params} />
 
             <HourWheel {...params} />
             {seperator && <div className="react-ios-time-picker-colon">:</div>}
