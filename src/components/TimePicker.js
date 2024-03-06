@@ -43,7 +43,7 @@ function TimePicker({
    //    onOpen();
    // };
 
-   let finalValue = inputValue;
+   let finalValue = initialValue;
 
    if (initialValue === null && use12Hours) {
       finalValue = `${pickerDefaultValue} AM`;
